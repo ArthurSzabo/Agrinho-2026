@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agro Forte, Futuro Sustentável</title>
+<style>
+/* --- Configurações Globais --- */
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+color: #333333;
+background-color: #f9f9f9;
+line-height: 1.6;
+}
+
+/* --- Cabeçalho e Navegação --- */
+header {
+background-color: #ffffff;
+position: fixed;
+top: 0;
+width: 100%;
+z-index: 1000;
+box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.nav-container {
+max-width: 1200px;
+margin: 0 auto;
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 20px;
+}
+
+.logo {
+font-weight: bold;
+font-size: 1.2rem;
+color: #2e7d32; /* Verde Agro */
+}
+
+nav ul {
+display: flex;
+list-style: none;
+gap: 20px;
+}
+
+nav a {
+text-decoration: none;
+color: #555555;
+font-weight: 500;
+transition: color 0.3s;
+}
+
+nav a:hover {
+color: #2e7d32;
+}
+
+/* --- Seção Principal (Banner Hero) --- */
+.hero {
+margin-top: 60px; /* Compensa o header fixo */
+background-color: #1b5e20; /* Fundo verde escuro (substituto para imagem de impacto) */
+color: #ffffff;
+padding: 100px 20px;
+text-align: center;
+}
+
+.hero h1 {
+font-size: 2.5rem;
+max-width: 800px;
+margin: 0 auto 20px auto;
+}
+
+.hero p {
+font-size: 1.2rem;
+max-width: 600px;
+margin: 0 auto 30px auto;
+opacity: 0.9;
+}
+
+.btn-principal {
+background-color: #ffb300; /* Amarelo ouro para destaque */
+color: #000000;
+padding: 12px 30px;
+text-decoration: none;
+font-weight: bold;
+border-radius: 5px;
+transition: background 0.3s;
+}
+
+.btn-principal:hover {
+background-color: #ffa000;
+}
+
+/* --- Estilização Geral das Seções --- */
+section {
+padding: 80px 20px;
+max-width: 1200px;
+margin: 0 auto;
+}
+
+.titulo-secao {
+text-align: center;
+color: #2e7d32;
+margin-bottom: 40px;
+font-size: 2rem;
+}
+
+/* --- Seção 1 e 2: Grid de Conteúdo --- */
+.grid-cards {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+gap: 30px;
+}
+
+.card {
+background-color: #ffffff;
+padding: 30px;
+border-radius: 8px;
+border-top: 4px solid #2e7d32;
+box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+transition: transform 0.3s;
+}
+
+.card:hover {
+transform: translateY(-5px);
+}
+
+.card h3 {
+color: #1b5e20;
+margin-bottom: 15px;
+}
+
+/* --- Seção 3: Layout de Destaque / Desafios --- */
+.bloco-desafios {
+background-color: #f5f5f5;
+padding: 40px;
+border-radius: 8px;
+border-left: 6px solid #c62828; /* Vermelho para alerta de impactos */
+}
+
+.bloco-desafios article {
+margin-bottom: 25px;
+}
+
+.bloco-desafios h3 {
+color: #c62828;
+margin-bottom: 10px;
+}
+
+/* --- Seção 5: Formulário de Contato --- */
+.form-contato {
+max-width: 600px;
+margin: 0 auto;
+background-color: #ffffff;
+padding: 40px;
+border-radius: 8px;
+box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.grupo-campo {
+margin-bottom: 20px;
+}
+
+.grupo-campo label {
+display: block;
+margin-bottom: 8px;
+font-weight: 500;
+}
+
+.grupo-campo input, .grupo-campo textarea {
+width: 100%;
+padding: 10px;
+border: 1px solid #cccccc;
+border-radius: 4px;
+font-size: 1rem;
+}
+
+.btn-enviar {
+background-color: #2e7d32;
+color: #ffffff;
+border: none;
+padding: 12px 25px;
+font-size: 1rem;
+font-weight: bold;
+border-radius: 4px;
+cursor: pointer;
+width: 100%;
+transition: background 0.3s;
+}
+
+.btn-enviar:hover {
+background-color: #1b5e20;
+}
+
+/* --- Rodapé --- */
+footer {
+background-color: #212121;
+color: #ffffff;
+text-align: center;
+padding: 30px 20px;
+margin-top: 60px;
+}
+
+/* --- Responsividade (Mobile) --- */
+@media (max-width: 768px) {
+.nav-container {
+flex-direction: column;
+gap: 15px;
+}
+
+nav ul {
+gap: 15px;
+font-size: 0.9rem;
+}
+
+.hero h1 {
+font-size: 1.8rem;
+}
+}
+</style>
+</head>
+<body>
+
+<!-- Cabeçalho de Navegação -->
+<header>
+<div class="nav-container">
+<div class="logo">AgroSustentável</div>
+<nav>
+<ul>
+<li><a href="#producao">Produção</a></li>
+<li><a href="#tecnologia">Tecnologia</a></li>
+<li><a href="#desafios">Desafios</a></li>
+<li><a href="#futuro">Futuro</a></li>
+<li><a href="#contato">Contato</a></li>
+</ul>
+</nav>
+</div>
+</header>
+
+<!-- Banner Principal (Hero Section) -->
+<section class="hero">
+<h1>Agro forte, futuro sustentável: equilíbrio entre produção e meio ambiente</h1>
+<p>Descubra como a tecnologia e a inovação estão transformando o campo, garantindo alimento na mesa e a preservação dos nossos recursos naturais.</p>
+<a href="#tecnologia" class="btn-principal">Conhecer Tecnologias</a>
+</section>
+
+<!-- Seção 1 – Produção Agrícola -->
+<section id="producao">
+<h2 class="titulo-secao">A Importância do Agronegócio</h2>
+<div class="grid-cards">
+<article class="card">
+<h3>Motor Econômico</h3>
+<p>O agronegócio representa cerca de 25% do PIB nacional, sendo fundamental para as exportações e o sustento de milhões de famílias.</p>
+</article>
+<article class="card">
+<h3>Segurança Alimentar</h3>
+<p>Produzir em larga escala com eficiência garante o abastecimento interno e consolida o papel do país no mercado global de alimentos.</p>
+</article>
+<article class="card">
+<h3>Evolução do Campo</h3>
+<p>O crescimento atual não depende de novas áreas de terra, mas sim do aumento da inteligência aplicada aos processos produtivos.</p>
+</article>
+</div>
+</section>
+
+<!-- Seção 2 – Tecnologias Sustentáveis -->
+<section id="tecnologia">
+<h2 class="titulo-secao">Inovações que Protegem</h2>
+<div class="grid-cards">
+<article class="card">
+<h3>Agricultura de Precisão</h3>
+<p>Uso de mapas via satélite e GPS para aplicar insumos no ponto exato da necessidade, reduzindo desperdícios de compostos químicos.</p>
+</article>
+<article class="card">
+<h3>Irrigação Inteligente</h3>
+<p>Sistemas automatizados por sensores de solo que dosam a quantidade de água necessária por planta, gerando economia hídrica real.</p>
+</article>
+<article class="card">
+<h3>Energia Limpa</h3>
+<p>Fazendas utilizando matrizes solares e gerando biogás a partir de resíduos orgânicos para zerar a dependência de combustíveis fósseis.</p>
+</article>
+</div>
+</section>
+
+<!-- Seção 3 – Desafios Ambientais -->
+<section id="desafios">
+<h2 class="titulo-secao">Os Desafios Actuais</h2>
+<div class="bloco-desafios">
+<article>
+<h3>Combate ao Desmatamento</h3>
+<p>A expansão horizontal indiscriminada ameaça a biodiversidade. A resposta está em produzir mais utilizando as áreas já abertas e degradadas.</p>
+</article>
+<article>
+<h3>Preservação dos Recursos Hídricos</h3>
+<p>A escassez severa exige que a gestão da água no campo mude drasticamente, evitando a sobrecarga de rios e lençóis freáticos.</p>
+</article>
+<article>
+<h3>Emissões de Carbono</h3>
+<p>A modernização de maquinários e técnicas de manejo do gado são urgentes para mitigar o efeito estufa gerado na atmosfera terrestre.</p>
+</article>
+</div>
+</section>
+
+<!-- Seção 4 – Soluções e Futuro -->
+<section id="futuro">
+<h2 class="titulo-secao">A Visão de Futuro</h2>
+<div class="grid-cards">
+<article class="card">
+<h3>Agricultura Regenerativa</h3>
+<p>Foco na recuperação total da saúde biológica do solo, mantendo a terra fértil por gerações sem dependência de químicos pesados.</p>
+</article>
+<article class="card">
+<h3>Drones e Monitoramento</h3>
+<p>Identificação aérea precoce de pragas para intervenções cirúrgicas e localizadas na lavoura, preservando a fauna nativa local.</p>
+</article>
+</div>
+</section>
+
+<!-- Seção 5 – Conscientização e Contato -->
+<section id="contato">
+<h2 class="titulo-secao">Fale Conosco</h2>
+<form class="form-contato" action="#" method="POST">
+<div class="grupo-campo">
+<label for="nome">Nome Completo</label>
+<input type="text" id="nome" name="nome" required placeholder="Digite seu nome">
+</div>
+<div class="grupo-campo">
+<label for="email">E-mail Comercial</label>
+<input type="email" id="email" name="email" required placeholder="seu@email.com">
+</div>
+<div class="grupo-campo">
+<label for="mensagem">Mensagem / Ideia para o Projeto</label>
+<textarea id="mensagem" name="mensagem" rows="5" required placeholder="Como podemos ajudar no equilíbrio ambiental?"></textarea>
+</div>
+<button type="submit" class="btn-enviar">Enviar Mensagem</button>
+</form>
+</section>
+
+<!-- Rodapé Institucional -->
+<footer>
+<p>&copy; 2026 Projeto AgroSustentável. Desenvolvido para a Atividade Inicial de Planejamento Web.</p>
+</footer>
+
+</body>
+</html>
