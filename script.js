@@ -1,75 +1,237 @@
-// Aguarda o carregamento do DOM para garantir que todos os elementos existam
-document.addEventListener("DOMContentLoaded", () => {
-    
-    // --- 1. VALIDAÇÃO E ENVIO DO FORMULÁRIO DE CONTATO ---
-    const formulario = document.querySelector(".form-contato");
-    
-    if (formulario) {
-        formulario.addEventListener("submit", (evento) => {
-            evento.preventDefault(); // Impede o recarregamento padrão da página
-            
-            // Captura os valores dos campos
-            const nome = document.getElementById("nome").value.trim();
-            const email = document.getElementById("email").value.trim();
-            const mensagem = document.getElementById("mensagem").value.trim();
-            
-            // Validação simples de segurança
-            if (nome === "" || email === "" || mensagem === "") {
-                alert("Por favor, preencha todos os campos antes de enviar.");
-                return;
-            }
-            
-            // Simulação de envio bem-sucedido
-            alert(`Obrigado pelo contato, ${nome}! Sua mensagem sobre o projeto Agrinho foi recebida com sucesso.`);
-            
-            // Limpa o formulário após o envio
-            formulario.reset();
-        });
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: Arial, sans-serif;
+    line-height:1.6;
+    background:#f4f7f2;
+    color:#333;
+}
+
+/* Cabeçalho */
+header{
+    background:#2e7d32;
+    color:white;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.nav-container{
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 20px;
+}
+
+.logo{
+    font-size:1.5rem;
+    font-weight:bold;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:20px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:#c8e6c9;
+}
+
+/* Hero - ALTERADO PARA A IMAGEM 1 DA PASTA ASSETS */
+.hero{
+    background:linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)),
+    url("assets/banner-agro.jpg");
+    background-size:cover;
+    background-position:center;
+    background-attachment: fixed; /* Adiciona um efeito parallax elegante */
+    color:white;
+    text-align:center;
+    padding:120px 20px;
+}
+
+.hero h1{
+    font-size:2.5rem;
+    margin-bottom:20px;
+}
+
+.hero p{
+    max-width:800px;
+    margin:auto;
+    margin-bottom:30px;
+}
+
+.btn-principal{
+    display:inline-block;
+    background:#4caf50;
+    color:white;
+    text-decoration:none;
+    padding:12px 24px;
+    border-radius:8px;
+    transition:.3s;
+}
+
+.btn-principal:hover{
+    background:#388e3c;
+}
+
+/* Seções */
+section{
+    padding:70px 20px;
+}
+
+.titulo-secao{
+    text-align:center;
+    margin-bottom:40px;
+    color:#2e7d32;
+    font-size:2rem;
+}
+
+/* Cards */
+.grid-cards{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 4px 10px rgba(0,0,0,.1);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.card h3{
+    color:#2e7d32;
+    margin-bottom:10px;
+}
+
+/* Estilos da Nova Imagem Seção Futuro */
+.conteudo-futuro {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.imagem-futuro-container {
+    width: 100%;
+    max-height: 400px;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.img-futuro {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.img-futuro:hover {
+    transform: scale(1.03);
+}
+
+/* Desafios */
+.bloco-desafios{
+    max-width:1000px;
+    margin:auto;
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.bloco-desafios article{
+    background:white;
+    padding:20px;
+    border-left:6px solid #4caf50;
+    border-radius:8px;
+    box-shadow:0 2px 6px rgba(0,0,0,.1);
+}
+
+/* Formulário */
+.form-contato{
+    max-width:700px;
+    margin:auto;
+    background:white;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 4px 10px rgba(0,0,0,.1);
+}
+
+.grupo-campo{
+    margin-bottom:20px;
+}
+
+.grupo-campo label{
+    display:block;
+    margin-bottom:8px;
+    font-weight:bold;
+}
+
+.grupo-campo input,
+.grupo-campo textarea{
+    width:100%;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:8px;
+}
+
+.btn-enviar{
+    background:#2e7d32;
+    color:white;
+    border:none;
+    padding:12px 25px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.btn-enviar:hover{
+    background:#1b5e20;
+}
+
+/* Rodapé */
+footer{
+    background:#1b5e20;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+/* Responsivo */
+@media(max-width:768px){
+    .nav-container{
+        flex-direction:column;
+        gap:10px;
     }
 
-    // --- 2. ROLAGEM SUAVE PARA OS LINKS DO MENU ---
-    const linksMenu = document.querySelectorAll('nav a[href^="#"], .btn-principal');
-    
-    linksMenu.forEach(link => {
-        link.addEventListener("click", (evento) => {
-            evento.preventDefault(); // Evita o pulo brusco
-            
-            const idAlvo = link.getAttribute("href");
-            const elementoAlvo = document.querySelector(idAlvo);
-            
-            if (elementoAlvo) {
-                // Calcula a altura do header fixo para não cobrir o título da seção
-                const alturaHeader = document.querySelector("header").offsetHeight;
-                const posicaoAlvo = elementoAlvo.offsetTop - alturaHeader;
-                
-                window.scrollTo({
-                    top: posicaoAlvo,
-                    behavior: "smooth" // Efeito de rolagem macio
-                });
-            }
-        });
-    });
+    nav ul{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
 
-    // --- 3. ANIMAÇÃO DE SURGIMENTO DOS CARDS (EFEITO SCROLL) ---
-    const cards = document.querySelectorAll(".card, .bloco-desafios article");
-    
-    // Configura o observador para identificar quando o elemento entra na tela
-    const observador = new IntersectionObserver((entradas) => {
-        entradas.forEach(entrada => {
-            if (entrada.isIntersecting) {
-                entrada.target.style.opacity = "1";
-                entrada.target.style.transform = "translateY(0)";
-            }
-        });
-    }, {
-        threshold: 0.1 // Ativa quando 10% do card estiver visível
-    });
-    
-    // Aplica o estado inicial oculto via JS e começa a observar
-    cards.forEach(card => {
-        card.style.opacity = "0";
-        card.style.transform = "translateY(30px)";
-        card.style.transition = "transform 0.6s ease-out, opacity 0.6s ease-out";
-        observador.observe(card);
-    });
-});
+    .hero h1{
+        font-size:1.8rem;
+    }
+}
