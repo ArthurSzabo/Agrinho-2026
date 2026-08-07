@@ -1,67 +1,205 @@
 document.addEventListener("DOMContentLoaded", () => {
-    
-    // --- 1. VALIDAÇÃO E ENVIO DO FORMULÁRIO DE CONTATO ---
+
+    // ===========================
+    // 1. FORMULÁRIO DE CONTATO
+    // ===========================
+
     const formulario = document.querySelector(".form-contato");
-    
+
     if (formulario) {
+
         formulario.addEventListener("submit", (evento) => {
+
             evento.preventDefault();
-            
+
             const nome = document.getElementById("nome").value.trim();
             const email = document.getElementById("email").value.trim();
             const mensagem = document.getElementById("mensagem").value.trim();
-            
+
             if (nome === "" || email === "" || mensagem === "") {
-                alert("Por favor, preencha todos os campos antes de enviar.");
+
+                alert("Preencha todos os campos.");
+
                 return;
+
             }
-            
-            alert(`Obrigado pelo contato, ${nome}! Sua mensagem sobre o projeto Agrinho foi recebida com sucesso.`);
+
+            alert(
+                `Obrigado pelo contato, ${nome}! Sua mensagem foi enviada com sucesso.`
+            );
+
             formulario.reset();
+
         });
+
     }
 
-    // --- 2. ROLAGEM SUAVE PARA OS LINKS DO MENU ---
-    const linksMenu = document.querySelectorAll('nav a[href^="#"], .btn-principal');
-    
+    // ===========================
+    // 2. MENU COM ROLAGEM SUAVE
+    // ===========================
+
+    const linksMenu = document.querySelectorAll(
+        'nav a[href^="#"], .btn-principal'
+    );
+
     linksMenu.forEach(link => {
-        link.addEventListener("click", (evento) => {
-            evento.preventDefault();
-            
-            const idAlvo = link.getAttribute("href");
-            const elementoAlvo = document.querySelector(idAlvo);
-            
-            if (elementoAlvo) {
-                const alturaHeader = document.querySelector("header").offsetHeight;
-                const posicaoAlvo = elementoAlvo.offsetTop - alturaHeader;
-                
+
+        link.addEventListener("click", function (e) {
+
+            e.preventDefault();
+
+            const destino = document.querySelector(
+                this.getAttribute("href")
+            );
+
+            if (destino) {
+
+                const header = document.querySelector("header").offsetHeight;
+
                 window.scrollTo({
-                    top: posicaoAlvo,
+
+                    top: destino.offsetTop - header,
+
                     behavior: "smooth"
+
                 });
+
             }
+
         });
+
     });
 
-    // --- 3. ANIMAÇÃO DE SURGIMENTO DOS CARDS E IMAGENS (EFEITO SCROLL) ---
-    // Adicionado o seletor da nova imagem (.imagem-futuro-container) para animar junto!
-    const elementosAnimados = document.querySelectorAll(".card, .bloco-desafios article, .imagem-futuro-container");
-    
+    // ===========================
+    // 3. ANIMAÇÕES AO ROLAR
+    // ===========================
+
+    const elementos = document.querySelectorAll(
+        ".card, .bloco-desafios article, .imagem-futuro-container, .fluxograma, .acessibilidade-card"
+    );
+
     const observador = new IntersectionObserver((entradas) => {
+
         entradas.forEach(entrada => {
+
             if (entrada.isIntersecting) {
+
                 entrada.target.style.opacity = "1";
                 entrada.target.style.transform = "translateY(0)";
+
             }
+
         });
+
     }, {
-        threshold: 0.1 
+
+        threshold: 0.15
+
     });
-    
-    elementosAnimados.forEach(elemento => {
-        elemento.style.opacity = "0";
-        elemento.style.transform = "translateY(30px)";
-        elemento.style.transition = "transform 0.6s ease-out, opacity 0.6s ease-out";
-        observador.observe(elemento);
+
+    elementos.forEach(item => {
+
+        item.style.opacity = "0";
+        item.style.transform = "translateY(40px)";
+        item.style.transition = "0.6s";
+
+        observador.observe(item);
+
     });
+
+    // ===========================
+    // 4. SIMULADOR DE AQUECIMENTO
+    // ===========================
+
+    const botao = document.getElementById("ligarSistema");
+    const temperatura = document.getElementById("temperatura");
+
+    if (botao && temperatura) {
+
+        let temp = 24;
+        let ligado = false;
+        let intervalo;
+
+        botao.addEventListener("click", () => {
+
+            if (!ligado) {
+
+                ligado = true;
+
+                botao.innerHTML = "Desligar Sistema";
+
+                intervalo = setInterval(() => {
+
+                    if (temp < 32) {
+
+                        temp += 0.5;
+
+                        temperatura.innerHTML = temp.toFixed(1) + " °C";
+
+                    }
+
+                }, 1000);
+
+            } else {
+
+                ligado = false;
+
+                botao.innerHTML = "Ligar Sistema";
+
+                clearInterval(intervalo);
+
+            }
+
+        });
+
+    }
+
+    // ===========================
+    // 5. BOTÃO VOLTAR AO TOPO
+    // ===========================
+
+    const topo = document.getElementById("voltarTopo");
+
+    if (topo) {
+
+        window.addEventListener("scroll", () => {
+
+            if (window.scrollY > 500) {
+
+                topo.style.display = "block";
+
+            } else {
+
+                topo.style.display = "none";
+
+            }
+
+        });
+
+        topo.addEventListener("click", () => {
+
+            window.scrollTo({
+
+                top: 0,
+
+                behavior: "smooth"
+
+            });
+
+        });
+
+    }
+
+    // ===========================
+    // 6. ANO AUTOMÁTICO NO RODAPÉ
+    // ===========================
+
+    const ano = document.getElementById("ano");
+
+    if (ano) {
+
+        ano.textContent = new Date().getFullYear();
+
+    }
+
 });
