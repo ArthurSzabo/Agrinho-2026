@@ -1,23 +1,35 @@
+/* ===========================
+   RESET
+=========================== */
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
 body{
-    font-family: Arial, sans-serif;
+    font-family:Arial, Helvetica, sans-serif;
     line-height:1.6;
     background:#f4f7f2;
     color:#333;
 }
 
-/* Cabeçalho */
+/* ===========================
+   CABEÇALHO
+=========================== */
+
 header{
     background:#2e7d32;
-    color:white;
+    color:#fff;
     position:sticky;
     top:0;
     z-index:1000;
+    box-shadow:0 3px 8px rgba(0,0,0,.15);
 }
 
 .nav-container{
@@ -30,130 +42,199 @@ header{
 }
 
 .logo{
-    font-size:1.5rem;
+    font-size:1.6rem;
     font-weight:bold;
+    color:#fff;
 }
 
 nav ul{
-    display:flex;
     list-style:none;
+    display:flex;
     gap:20px;
 }
 
 nav a{
-    color:white;
+    color:#fff;
     text-decoration:none;
     font-weight:bold;
+    transition:.3s;
 }
 
 nav a:hover{
     color:#c8e6c9;
 }
 
-/* Hero - ALTERADO PARA A IMAGEM 1 DA PASTA ASSETS */
+/* ===========================
+   HERO
+=========================== */
+
 .hero{
-    background:linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)),
+    background:
+    linear-gradient(rgba(0,0,0,.55),
+    rgba(0,0,0,.55)),
     url("assets/banner-agro.png");
+
     background-size:cover;
     background-position:center;
-    background-attachment: fixed; /* Adiciona um efeito parallax elegante */
+    background-attachment:fixed;
+
     color:white;
     text-align:center;
-    padding:120px 20px;
+
+    padding:140px 20px;
 }
 
 .hero h1{
-    font-size:2.5rem;
+    font-size:2.7rem;
     margin-bottom:20px;
 }
 
 .hero p{
     max-width:800px;
     margin:auto;
-    margin-bottom:30px;
+    margin-bottom:35px;
+    font-size:1.1rem;
 }
 
 .btn-principal{
     display:inline-block;
-    background:#4caf50;
+    background:#43a047;
     color:white;
     text-decoration:none;
-    padding:12px 24px;
+    padding:14px 28px;
     border-radius:8px;
     transition:.3s;
+    font-weight:bold;
 }
 
 .btn-principal:hover{
-    background:#388e3c;
+    background:#2e7d32;
+    transform:translateY(-2px);
 }
 
-/* Seções */
+/* ===========================
+   SEÇÕES
+=========================== */
+
 section{
     padding:70px 20px;
 }
 
 .titulo-secao{
     text-align:center;
-    margin-bottom:40px;
     color:#2e7d32;
     font-size:2rem;
+    margin-bottom:40px;
 }
 
-/* Cards */
+/* ===========================
+   CARDS
+=========================== */
+
 .grid-cards{
+
     max-width:1200px;
     margin:auto;
+
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(260px,1fr));
+
     gap:25px;
+
 }
 
 .card{
+
     background:white;
-    padding:25px;
+
     border-radius:12px;
-    box-shadow:0 4px 10px rgba(0,0,0,.1);
+
+    padding:25px;
+
+    box-shadow:0 4px 12px rgba(0,0,0,.10);
+
     transition:.3s;
+
 }
 
 .card:hover{
-    transform:translateY(-5px);
+
+    transform:translateY(-8px);
+
+    box-shadow:0 8px 18px rgba(0,0,0,.18);
+
 }
 
 .card h3{
+
     color:#2e7d32;
-    margin-bottom:10px;
+
+    margin-bottom:12px;
+
 }
 
-/* Estilos da Nova Imagem Seção Futuro */
-.conteudo-futuro {
-    max-width: 1200px;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
+.card p{
+
+    text-align:justify;
+
 }
 
-.imagem-futuro-container {
-    width: 100%;
-    max-height: 400px;
-    overflow: hidden;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+/* ===========================
+   IMAGEM FUTURO
+=========================== */
+
+.conteudo-futuro{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:35px;
+
 }
 
-.img-futuro {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
+.imagem-futuro-container{
+
+    width:100%;
+
+    max-height:420px;
+
+    overflow:hidden;
+
+    border-radius:12px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.18);
+
 }
 
-.img-futuro:hover {
-    transform: scale(1.03);
+.img-futuro{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    transition:.5s;
+
 }
 
-/* Desafios */
+.img-futuro:hover{
+
+    transform:scale(1.04);
+
+}
+
+/* ===========================
+   DESAFIOS
+=========================== */
+
 .bloco-desafios{
     max-width:1000px;
     margin:auto;
@@ -163,21 +244,126 @@ section{
 }
 
 .bloco-desafios article{
-    background:white;
+    background:#fff;
     padding:20px;
     border-left:6px solid #4caf50;
-    border-radius:8px;
-    box-shadow:0 2px 6px rgba(0,0,0,.1);
+    border-radius:10px;
+    box-shadow:0 3px 10px rgba(0,0,0,.1);
 }
 
-/* Formulário */
+/* ===========================
+   ÓPTICA APLICADA
+=========================== */
+
+.optica{
+    max-width:1200px;
+    margin:auto;
+}
+
+.optica .card{
+    border-top:5px solid #fbc02d;
+}
+
+.optica h3{
+    color:#f57c00;
+}
+
+/* ===========================
+   ROBÓTICA E PROGRAMAÇÃO
+=========================== */
+
+.robotica{
+    max-width:1200px;
+    margin:auto;
+}
+
+.fluxograma{
+    background:#ffffff;
+    border-radius:12px;
+    padding:30px;
+    margin-top:30px;
+    box-shadow:0 4px 12px rgba(0,0,0,.12);
+}
+
+.fluxograma h3{
+    color:#2e7d32;
+    margin-bottom:20px;
+    text-align:center;
+}
+
+.fluxograma ol{
+    margin-left:25px;
+    line-height:2;
+}
+
+/* ===========================
+   SIMULADOR
+=========================== */
+
+.simulador{
+    max-width:700px;
+    margin:50px auto;
+    background:#ffffff;
+    padding:30px;
+    border-radius:12px;
+    text-align:center;
+    box-shadow:0 4px 15px rgba(0,0,0,.15);
+}
+
+.simulador h3{
+    color:#2e7d32;
+    margin-bottom:20px;
+}
+
+#temperatura{
+    font-size:2.2rem;
+    color:#e65100;
+    font-weight:bold;
+    margin:20px 0;
+}
+
+#ligarSistema{
+    margin-top:20px;
+}
+
+/* ===========================
+   ACESSIBILIDADE
+=========================== */
+
+.acessibilidade-card{
+    max-width:1100px;
+    margin:40px auto;
+    background:#ffffff;
+    border-left:6px solid #1565c0;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 4px 12px rgba(0,0,0,.12);
+}
+
+.acessibilidade-card h3{
+    color:#1565c0;
+    margin-bottom:15px;
+}
+
+.acessibilidade-card ul{
+    margin-left:20px;
+}
+
+.acessibilidade-card li{
+    margin-bottom:10px;
+}
+
+/* ===========================
+   FORMULÁRIO
+=========================== */
+
 .form-contato{
     max-width:700px;
     margin:auto;
-    background:white;
+    background:#ffffff;
     padding:30px;
     border-radius:12px;
-    box-shadow:0 4px 10px rgba(0,0,0,.1);
+    box-shadow:0 4px 12px rgba(0,0,0,.12);
 }
 
 .grupo-campo{
@@ -194,36 +380,84 @@ section{
 .grupo-campo textarea{
     width:100%;
     padding:12px;
-    border:1px solid #ccc;
+    border:1px solid #cccccc;
     border-radius:8px;
+    font-size:1rem;
+}
+
+.grupo-campo input:focus,
+.grupo-campo textarea:focus{
+    outline:none;
+    border-color:#2e7d32;
+    box-shadow:0 0 5px rgba(46,125,50,.3);
 }
 
 .btn-enviar{
     background:#2e7d32;
-    color:white;
+    color:#fff;
     border:none;
-    padding:12px 25px;
+    padding:12px 28px;
     border-radius:8px;
     cursor:pointer;
+    transition:.3s;
 }
 
 .btn-enviar:hover{
     background:#1b5e20;
 }
 
-/* Rodapé */
-footer{
-    background:#1b5e20;
-    color:white;
-    text-align:center;
-    padding:20px;
+/* ===========================
+   BOTÃO VOLTAR AO TOPO
+=========================== */
+
+#voltarTopo{
+    display:none;
+    position:fixed;
+    right:25px;
+    bottom:25px;
+    width:50px;
+    height:50px;
+    border:none;
+    border-radius:50%;
+    background:#2e7d32;
+    color:#fff;
+    font-size:22px;
+    cursor:pointer;
+    box-shadow:0 4px 10px rgba(0,0,0,.25);
+    transition:.3s;
+    z-index:999;
 }
 
-/* Responsivo */
+#voltarTopo:hover{
+    background:#1b5e20;
+    transform:scale(1.08);
+}
+
+/* ===========================
+   RODAPÉ
+=========================== */
+
+footer{
+    background:#1b5e20;
+    color:#ffffff;
+    text-align:center;
+    padding:25px;
+    margin-top:40px;
+}
+
+footer p{
+    font-size:.95rem;
+}
+
+/* ===========================
+   RESPONSIVIDADE
+=========================== */
+
 @media(max-width:768px){
+
     .nav-container{
         flex-direction:column;
-        gap:10px;
+        gap:15px;
     }
 
     nav ul{
@@ -231,7 +465,55 @@ footer{
         justify-content:center;
     }
 
+    .hero{
+        padding:90px 20px;
+        background-attachment:scroll;
+    }
+
     .hero h1{
+        font-size:2rem;
+    }
+
+    .hero p{
+        font-size:1rem;
+    }
+
+    .titulo-secao{
+        font-size:1.7rem;
+    }
+
+    .grid-cards{
+        grid-template-columns:1fr;
+    }
+
+    .conteudo-futuro{
+        gap:20px;
+    }
+
+    #temperatura{
         font-size:1.8rem;
     }
+
+}
+
+@media(max-width:480px){
+
+    .hero h1{
+        font-size:1.6rem;
+    }
+
+    .logo{
+        font-size:1.3rem;
+    }
+
+    nav ul{
+        gap:10px;
+    }
+
+    .btn-principal,
+    .btn-enviar{
+        width:100%;
+        text-align:center;
+    }
+
 }
